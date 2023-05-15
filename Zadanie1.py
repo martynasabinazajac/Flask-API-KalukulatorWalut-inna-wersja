@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 def pobieranie_danych():
     response = requests.get("http://api.nbp.pl/api/exchangerates/tables/C?format=json")
-    data = response.json()
+    data = response.json() #to co jest w data jest już pythonowym obiektem
     return data
 
 

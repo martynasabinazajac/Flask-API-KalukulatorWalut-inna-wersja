@@ -10,11 +10,11 @@
         <form action="" method="POST">
             <label for="waluta">wybierz walutę</label>
             <select name="waluta" id="waluta" method="POST" class="selectpicker form-control" >
-                {% for items in items %}
-                <option value="{{items}}">{{items}}</option>
+                {% for item in items %}
+                <option value="{{item}}" {% if item==waluta %}selected="selected" {% endif %}>{{item}}</option>
                 {% endfor %}
             </select>
-            <input name="kwota" id="kwota" type="text">
+            <input name="kwota" id="kwota" type="text" value="{{request.form['kwota']}}" placeholder="tu wpisz kwotę">
             <input type="submit">
         </form>
         <h2>Wynik poniżej:</h2>
